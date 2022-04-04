@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Console {
@@ -28,6 +29,19 @@ public class Console {
             }
             System.out.println(str);
         }
+    }
+    public static void OutputSequence(String mess, LinkedList<Integer> list)
+    {
+        System.out.println(mess);
+
+            String str = "";
+            int indx =0;
+            for(Integer num:list) {
+                str += num;
+                if(indx<list.size()-1)str +=", ";
+                indx++;
+            }
+            System.out.println(str);
     }
     public static void PrintMessage(String str) {System.out.print(str);}
     public static int ReadInt(String str, int min){return ReadInt(str,min,-1);}

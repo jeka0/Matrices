@@ -12,7 +12,7 @@ public class Convert {
             if(num!=0) {
                 boolean flag=true;
                 for(Edge edge : edges)if(edge.IsIncidentNode(i)&&edge.IsIncidentNode(j))flag=false;
-                if(flag)edges.add(new Edge(i,j));
+                if(flag)for(int p=0;p<num;p++)edges.add(new Edge(i,j));
                 if (i == j) num *= 2;
                 count += num;
             }
@@ -43,7 +43,7 @@ public class Convert {
         {
             newList[j] = new ArrayList<>();
             for(Integer num:list[j])
-                for(int i =0;i< newList.length;i++)if(i!=j && list[i].contains(num))newList[j].add(i);
+                for(int i =0;i< newList.length;i++)if(i!=j && list[i].contains(num) && !newList[j].contains(i))newList[j].add(i);
         }
         return newList;
     }
